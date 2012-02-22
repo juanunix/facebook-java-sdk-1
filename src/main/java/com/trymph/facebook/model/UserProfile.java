@@ -65,7 +65,7 @@ public class UserProfile {
   }
 
   public UserProfile(String id, String name, String firstName, String middleName,
-      String lastName, String gender, String locale, List<FacebookRef> languages, URL link,
+      String lastName, Gender gender, String locale, List<FacebookRef> languages, URL link,
       String userName, String thirdPartyId, String timeZone, String bio, String birthday,
       List<Employer> education, String email, FacebookRef homeTown,
       List<String> interestedIn, FacebookRef location, String political,
@@ -77,7 +77,7 @@ public class UserProfile {
     this.first_name = firstName;
     this.middle_name = middleName;
     this.last_name = lastName;
-    this.gender = gender;
+    this.gender = gender == null ? null : gender.toString().toLowerCase();
     this.locale = locale;
     this.languages = languages;
     this.link = link;
