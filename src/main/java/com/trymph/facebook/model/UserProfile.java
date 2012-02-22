@@ -33,7 +33,7 @@ public class UserProfile {
   private final String first_name;
   private final String middle_name;
   private final String last_name;
-  private final Gender gender;
+  private final String gender;
   private final String locale;
   private final List<FacebookRef> languages;
   private final URL link;
@@ -65,7 +65,7 @@ public class UserProfile {
   }
 
   public UserProfile(String id, String name, String firstName, String middleName,
-      String lastName, Gender gender, String locale, List<FacebookRef> languages, URL link,
+      String lastName, String gender, String locale, List<FacebookRef> languages, URL link,
       String userName, String thirdPartyId, String timeZone, String bio, String birthday,
       List<Employer> education, String email, FacebookRef homeTown,
       List<String> interestedIn, FacebookRef location, String political,
@@ -123,7 +123,7 @@ public class UserProfile {
   }
 
   public Gender getGender() {
-    return gender;
+    return Gender.fromJson(gender);
   }
 
   public String getLocale() {

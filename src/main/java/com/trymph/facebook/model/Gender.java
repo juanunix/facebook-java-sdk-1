@@ -15,14 +15,16 @@
  */
 package com.trymph.facebook.model;
 
-import com.google.gson.annotations.SerializedName;
-
 /**
  * Enum for gender as used by Facebook JSON API
  *
  * @author Inderjeet Singh
  */
 public enum Gender {
-  @SerializedName("male") MALE,
-  @SerializedName("female") FEMALE
+  MALE,
+  FEMALE;
+
+  public static Gender fromJson(String gender) {
+    return Gender.valueOf(gender.toUpperCase());
+  }
 }
